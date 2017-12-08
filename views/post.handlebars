@@ -1,0 +1,33 @@
+ <h2 class="page-header">Write New Post</h2>
+
+
+<form name="feedback" method="post" action="/wpost" onsubmit="return getContent()">
+  <input type="text" id="myTitle" name="title" value="" style="display:none">
+  <textarea id="my-textarea" name="post" style="display:none"></textarea>
+  <div class="modal posts " style = " m"tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="postTitle" contenteditable="true"  placeholder="What's New?" ></div>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="postContent" contenteditable="true"  placeholder="What have you been upto?"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ </form>
+
+ <script type="text/javascript">
+    function getContent(){
+        document.getElementById("my-textarea").value = document.getElementsByClassName("postContent")[0].innerHTML;
+        document.getElementById("myTitle").value = document.getElementsByClassName("postTitle")[0].innerHTML;
+
+    }
+
+</script>

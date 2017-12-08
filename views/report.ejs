@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DiGG It</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+              <li role="presentation"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>
+ Home</a></li>
+              <li role="presentation"><a href="/wpost"><i class="fa fa-pencil" aria-hidden="true"></i> New Post</a></li>
+              <li role="presentation"><a href="/users/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+ Sign Out</a></li>
+							<li role="presentation"><a href="/profile"><i class="fa fa-user" aria-hidden="true"></i>
+ My Posts</a></li>
+          </ul>
+        </nav>
+        <h3 class="heading"><img height = "70px" src="http://www.iconninja.com/files/773/65/93/digg-social-jean-denim-logo-icon.png"> DiGG It</h3>
+      </div>
+
+      <% flaggedPost.forEach(function(post){ %>
+        <div class="modal posts " style = " m"tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="postTitle">
+      							<%= post.title %>
+      							<a href="/delete/<%=post._id%>"><i class="fa fa-trash-o" style="float: right" aria-hidden="true"></i></a>
+                  </div>
+
+                </div>
+                <div class="modal-body">
+                  <div class="postContent">
+      							<%= post.post %>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="date">
+      						 <% if(new Date().getHours() - post.date.getHours()>0) {%>
+      								<strong><%= new Date().getHours() - post.date.getHours() %> hour ago</strong>
+      						 <% } else if(new Date().getHours() - post.date.getHours()>1) {%>
+      	 							<strong><%= new Date().getHours() - post.date.getHours() %> hours ago</strong>
+      						 <% } else { %>
+      							    <strong><%= new Date().getMinutes() - post.date.getMinutes() %> Minutes ago</strong>
+      					   <% } %>
+      						</div>
+      						<div class="postTitle">
+      							Posted By: <%= post.username %>
+                  </div>
+                  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+
+
+
+
+
+</body>
+</html>
