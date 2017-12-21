@@ -1,4 +1,4 @@
-# basic social networking site in node.js
+# basic social networking site using node.js
 
 This is a basic social networking site using Node.js, Express, Passport and Mongoose
 
