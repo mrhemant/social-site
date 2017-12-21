@@ -1,16 +1,10 @@
-# Node.js social networking site
+# basic social networking site in node.js
 
 This is a basic social networking site using Node.js, Express, Passport and Mongoose
 
-### Version
-1.1.0
-
-### Usage
-
-
 ### Installation
 
-this app requires [Node.js](https://nodejs.org/) v4+ to run.
+this app requires [Node.js](https://nodejs.org/) v4+ and MongoDB to run.
 
 ```sh
 $ npm start
