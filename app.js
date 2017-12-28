@@ -12,7 +12,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 
-mongoose.connect('ds133077.mlab.com:33077/social');
+mongoose.connect('mongodb://login:login@ds133627.mlab.com:33627/loginapp');
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
